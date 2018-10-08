@@ -7,6 +7,8 @@
         <meta name="robots" content="noindex, nofollow">
         <meta http-equiv="X-UA-Compatible" content="IE=9" />
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <!-- Adding Allura and Alex Brush google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
@@ -40,10 +42,11 @@
                     <div class="header-toggles--mobile">
                         <a href="#">
                             <!-- Added the cart icon but needs testing -->
-                            <img src="images/shopping-cart.png" alt="cart">
+                            <img src="images/shopping-cart.png" alt="cart" style="width: 32px; height: 28px;">
                             <span class="visually-hidden">Go to Cart</span>
                         </a>
                         <a href="#" class="menu-toggle">
+                            <i class="fa fa-bars"></i>
                             <span class="visually-hidden">Toggle Menu</span>
                         </a>
                     </div>
@@ -69,7 +72,7 @@
                         </form>
                     </div>
 
-<!--                     <div class="member-widget">
+                    <div class="member-widget">
                         <ul class="login-links">
                             <li><a href="#">Baby Registry</a></li>
                             <li><a href="#">Login/Register</a></li>
@@ -80,7 +83,7 @@
                             </li>
                         </ul>
                     </div>
- -->
+
                 </div>
                 <div class="header-bottom">
 
@@ -260,7 +263,7 @@
                                 </li>
                             </ul>
                         </div>
-
+                    
                         <div class="newsletter">
                             <h2>Newsletter</h2>
                             <p>Get the latest promotions and special offers delivered directly toyour inbox!</p>
@@ -291,5 +294,22 @@
                 </div>
             </footer>
         </div>
+
+        <script type="text/javascript">
+            var acc = document.getElementsByClassName("expander__toggle");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight){
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            }
+        </script>
     </body>
 </html>
