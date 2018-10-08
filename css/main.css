@@ -121,6 +121,12 @@
 
         .header-middle .member-widget__cart { display:none; }
 
+        /* this following media query is added to hide member-widget 
+        in the top section for small screens */
+        @media screen and (max-width:63.9em) {
+            .header-top .member-widget { display: none; }
+        }
+
         .header-middle .login-links {
             margin:20px 0 0;
             -webkit-box-pack: center;
@@ -128,7 +134,8 @@
                     justify-content: center;
         }
 
-        .header-bottom { display:none; }
+        /*.header-bottom { display:none; }*/
+        /* this line is commented to show header-bottom - Arjun */
 
         @media (min-width:64em) {
             .page-header { border:0; }
@@ -183,7 +190,8 @@
         /* made member-widget display to inline-block from none */
 
         @media (max-width:63.9em) {
-            .header-top .member-widget { display:inline-block; }
+            /*.header-top .member-widget { display:inline-block; }*/
+            /* this line is commented to hide member-widgets in the heade top in the small screens */
 
             .header-bottom {
                 position:absolute;
@@ -275,12 +283,14 @@
             background-repeat:repeat-x;
         }
 
-        .footer-top .page-footer__column { max-width:224px; }
+        /*.footer-top .page-footer__column { max-width:224px; }
         .page-footer__column h2,
         .page-footer__column .wysiwyg h2 {
             margin-top:25px;
             margin-bottom:.3em;
-        }
+        }*/
+
+        .footer-top .page-footer__column { width:100%; }
 
         .footer-top .wysiwyg { color:#333; }
         .footer-top .wysiwyg strong {
@@ -312,6 +322,55 @@
                 margin:0 auto;
                 width:222px;
                 height:42px;
+            }
+
+            /* all of this is only for bigger screens */
+            .footer-top .page-footer__column { max-width:224px; }
+            .page-footer__column h2,
+            .page-footer__column .wysiwyg h2 {
+                margin-top:25px;
+                margin-bottom:.3em;
+            }
+        }
+
+        @media screen and (max-width:63.9em) {
+            .page-footer h2 {
+                margin: 0px;
+                margin-block-start: 10px;
+                margin-block-end: 10px;
+            }
+            .expander h2 {
+                padding-bottom: 5px;
+                border-bottom: 1px solid #cfcfcf;
+            }
+            .expander__toggle {
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                transition: 0.4s;
+            }
+            .active, .expander__toggle:hover {
+                background-color: #ccc;
+            }
+            .expander__toggle:after {
+                content: '\002B';
+                color: #7494b7;
+                font-weight: bold;
+                float: right;
+                line-height: 1.5rem;
+                font-size: 1.5rem;
+                margin-right: 15px;
+            }
+            .active:after {
+                content: "\2212";
+            }
+            .expander__panel {
+                padding: 0 18px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
             }
         }
 
@@ -522,6 +581,8 @@
             position:relative;
             width:32px;
             height:28px;
+            font-size: 24px;
+            cursor: pointer;
         }
 
         @media (min-width:64em) {
@@ -700,6 +761,9 @@
         }
 
     /*----- NEWSLETTER FORM -----*/
+
+        /* To make the news-letter appear in a new line */
+        .newsletter { clear:both; }
 
         .newsletter p { font-style:italic; }
 
